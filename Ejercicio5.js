@@ -6,13 +6,14 @@ const COSTO_TIEMPO_MAX = 2000;
 
 prompt("¡Bienvenido a Paseo Mascotas los devs!")
 
-let mascotaGato = confirm("¿Tiene gatos?");
-let mascotaPerro = confirm("¿Tiene perros?");
+/* let mascotaGato = confirm("¿Tiene gatos?");
+let mascotaPerro = confirm("¿Tiene perros?"); */
 
-let cantidadMascotas = prompt("Ingrese el número de mascotas que desea pasear");
+let tipoMascota = prompt("Ingrese si su mascota es un gato o perro");
+let cantidadMascotas = prompt("Ingrese el número de mascotas que desea pasear"); 
 let tiempoPaseo = prompt("¿Cuántos minutos desea que dure el paseo? 30 o 60 min?");
 
-if (((mascotaGato && mascotaPerro) || (mascotaGato || mascotaPerro)) && (cantidadMascotas <= LIM_MASCOTA_CLIENTE) && ((tiempoPaseo == LIM_TIEMPO_MIN) || (tiempoPaseo == LIM_TIEMPO_MAX))) {
+if ((cantidadMascotas <= LIM_MASCOTA_CLIENTE) && ((tiempoPaseo == LIM_TIEMPO_MIN) || (tiempoPaseo == LIM_TIEMPO_MAX))) {
     document.write("<h1>Perfecto! Podemos pasear a sus mascotas</h1>");
     document.write("<h3>Cantidad de mascotas a pasear: " + cantidadMascotas + " </h3>");
     document.write("<h3>Duración del paseo: " + tiempoPaseo + " minutos</h3>");
