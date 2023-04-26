@@ -31,19 +31,34 @@ const LIM_MASCOTAS = 3;
 const TIPO_MASCOTA_GATO = 1;
 const TIPO_MASCOTA_PERRO = 2;
 const CANT_PERROS_DEFECTO = 0;
+const TIEMPO_PASEO_DEF = 30;
+
+const LIM_TIEMPO_MIN = 30;
+const LIM_TIEMPO_MAX = 60;
 
 confirm("¡Bienvenido a Paseo Mascotas los devs! Para continuar click en Aceptar");
 
 let tipoMascota = prompt("Si tiene un gato ingrese 1\nSi tiene perros ingrese 2");
 let cantPerros = CANT_PERROS_DEFECTO;
+let tiempoPaseo = TIEMPO_PASEO_DEF;
 
 if (tipoMascota == TIPO_MASCOTA_PERRO) {
     cantPerros = prompt("Ingrese la cantidad de mascotas que desea pasear");
     if (cantPerros <= LIM_MASCOTAS) {
-        document.write("Perfecto! Un operador se contactará a la brevedad para coordinar el paseo para su/s perro/s.");
+        tiempoPaseo = prompt("¿Cuántos minutos desea que dure el paseo? 30 o 60 min?");
+        if ((tiempoPaseo >= LIM_TIEMPO_MIN) && (tiempoPaseo <= LIM_TIEMPO_MAX)) {
+            document.write("Perfecto! Un operador se contactará a la brevedad para coordinar el paseo para su/s perro/s.");
+        } else {
+            document.write("No es posible realizar un paseo de esa cantidad de minutos.");
+        }
     }else{
         document.write("No es posible pasear esa cantidad de perros.");
     }
 } else {
-    document.write("Perfecto! En breve un operador se contactará para coordirar el paseo de su gato.")
+    tiempoPaseo = prompt("¿Cuántos minutos desea que dure el paseo? 30 o 60 min?");
+    if ((tiempoPaseo >= LIM_TIEMPO_MIN) && (tiempoPaseo <= LIM_TIEMPO_MAX)) {
+        document.write("Perfecto! En breve un operador se contactará para coordirar el paseo de su gato.");
+    } else {
+        document.write("No es posible realizar un paseo de esa cantidad de minutos.");
+    }
 }
